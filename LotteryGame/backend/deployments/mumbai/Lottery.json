@@ -1,0 +1,484 @@
+{
+  "address": "0x6Ea755871D5421F8E6fDfe74984AE22e09843Be4",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vrfCoordinator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "linkToken",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "vrfKeyHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "vrfFee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "gameId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "winner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "GameEnded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "gameId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "maxPlayers",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "entryFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "GameStarted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "gameId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "player",
+          "type": "address"
+        }
+      ],
+      "name": "PlayerJoined",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [],
+      "name": "fee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gameId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gameStarted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "joinGame",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "keyHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "players",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "randomness",
+          "type": "uint256"
+        }
+      ],
+      "name": "rawFulfillRandomness",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_maxPlayers",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_entryFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "startGame",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xb2e37333850240a91975bcf9558c23f2abf8fb2d6420b54b6e63a8d03d9609b3",
+  "receipt": {
+    "to": null,
+    "from": "0xc88A7040ADc5c9137Beeba7d985065ACB72b5f29",
+    "contractAddress": "0x6Ea755871D5421F8E6fDfe74984AE22e09843Be4",
+    "transactionIndex": 5,
+    "gasUsed": "1382744",
+    "logsBloom": "0x00000000000000020000000000000000000020000000000000800000000000000000000000000000000000000000000000008000008000000000000000000000000000000000000000000000000000800001000000000000000100000000000000000000020000000000000000000800000000000000000080000000480000400000000000000000000000000000000000000000200000004000000000000000200000000000000020000000000000000001000000000000000000000000004000000000000000000001000000000000000000000000000000100000000020000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x4defb35d0bf49f3aad06e6fbf03c6cd1063b72c182eb4b7a95d8f0daaed5e35d",
+    "transactionHash": "0xb2e37333850240a91975bcf9558c23f2abf8fb2d6420b54b6e63a8d03d9609b3",
+    "logs": [
+      {
+        "transactionIndex": 5,
+        "blockNumber": 31150107,
+        "transactionHash": "0xb2e37333850240a91975bcf9558c23f2abf8fb2d6420b54b6e63a8d03d9609b3",
+        "address": "0x6Ea755871D5421F8E6fDfe74984AE22e09843Be4",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x000000000000000000000000c88a7040adc5c9137beeba7d985065acb72b5f29"
+        ],
+        "data": "0x",
+        "logIndex": 23,
+        "blockHash": "0x4defb35d0bf49f3aad06e6fbf03c6cd1063b72c182eb4b7a95d8f0daaed5e35d"
+      },
+      {
+        "transactionIndex": 5,
+        "blockNumber": 31150107,
+        "transactionHash": "0xb2e37333850240a91975bcf9558c23f2abf8fb2d6420b54b6e63a8d03d9609b3",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x000000000000000000000000c88a7040adc5c9137beeba7d985065acb72b5f29",
+          "0x000000000000000000000000c26880a0af2ea0c7e8130e6ec47af756465452e8"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000075e65c367280000000000000000000000000000000000000000000000000006b618614eac6509000000000000000000000000000000000000000000001904662e0f144d79903800000000000000000000000000000000000000000000000006aeb9fb8b453d0900000000000000000000000000000000000000000000190466356d7a10e0b838",
+        "logIndex": 24,
+        "blockHash": "0x4defb35d0bf49f3aad06e6fbf03c6cd1063b72c182eb4b7a95d8f0daaed5e35d"
+      }
+    ],
+    "blockNumber": 31150107,
+    "cumulativeGasUsed": "3678273",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x8C7382F9D8f56b33781fE506E897a4F1e2d17255",
+    "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
+    "0x6e75b569a01ef56d18cab6a8e71e6600d6ce853834d4a5748b720d06f878b3a4",
+    "100000000000000"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "863aac8413a596009e5fde588b5acdff",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vrfCoordinator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkToken\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"vrfKeyHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"vrfFee\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gameId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"}],\"name\":\"GameEnded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gameId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"maxPlayers\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"entryFee\",\"type\":\"uint256\"}],\"name\":\"GameStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gameId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"PlayerJoined\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"fee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gameId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gameStarted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"joinGame\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"keyHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"players\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"randomness\",\"type\":\"uint256\"}],\"name\":\"rawFulfillRandomness\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_maxPlayers\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"_entryFee\",\"type\":\"uint256\"}],\"name\":\"startGame\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"linkToken\":\"address of LINK token contract\",\"vrfCoordinator\":\"address of VRFCoordinator contract\",\"vrfFee\":\"the amount of LINK to send with the request\",\"vrfKeyHash\":\"ID of public key against which randomness is generated\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"events\":{\"GameStarted(uint256,uint8,uint256)\":{\"notice\":\"events\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"constructor inherits a VRFConsumerBase and initiates the values for keyHash, fee and gameStarted\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Lottery.sol\":\"Lottery\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.8/VRFConsumerBase.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport \\\"./interfaces/LinkTokenInterface.sol\\\";\\n\\nimport \\\"./VRFRequestIDBase.sol\\\";\\n\\n/** ****************************************************************************\\n * @notice Interface for contracts using VRF randomness\\n * *****************************************************************************\\n * @dev PURPOSE\\n *\\n * @dev Reggie the Random Oracle (not his real job) wants to provide randomness\\n * @dev to Vera the verifier in such a way that Vera can be sure he's not\\n * @dev making his output up to suit himself. Reggie provides Vera a public key\\n * @dev to which he knows the secret key. Each time Vera provides a seed to\\n * @dev Reggie, he gives back a value which is computed completely\\n * @dev deterministically from the seed and the secret key.\\n *\\n * @dev Reggie provides a proof by which Vera can verify that the output was\\n * @dev correctly computed once Reggie tells it to her, but without that proof,\\n * @dev the output is indistinguishable to her from a uniform random sample\\n * @dev from the output space.\\n *\\n * @dev The purpose of this contract is to make it easy for unrelated contracts\\n * @dev to talk to Vera the verifier about the work Reggie is doing, to provide\\n * @dev simple access to a verifiable source of randomness.\\n * *****************************************************************************\\n * @dev USAGE\\n *\\n * @dev Calling contracts must inherit from VRFConsumerBase, and can\\n * @dev initialize VRFConsumerBase's attributes in their constructor as\\n * @dev shown:\\n *\\n * @dev   contract VRFConsumer {\\n * @dev     constructor(<other arguments>, address _vrfCoordinator, address _link)\\n * @dev       VRFConsumerBase(_vrfCoordinator, _link) public {\\n * @dev         <initialization with other arguments goes here>\\n * @dev       }\\n * @dev   }\\n *\\n * @dev The oracle will have given you an ID for the VRF keypair they have\\n * @dev committed to (let's call it keyHash), and have told you the minimum LINK\\n * @dev price for VRF service. Make sure your contract has sufficient LINK, and\\n * @dev call requestRandomness(keyHash, fee, seed), where seed is the input you\\n * @dev want to generate randomness from.\\n *\\n * @dev Once the VRFCoordinator has received and validated the oracle's response\\n * @dev to your request, it will call your contract's fulfillRandomness method.\\n *\\n * @dev The randomness argument to fulfillRandomness is the actual random value\\n * @dev generated from your seed.\\n *\\n * @dev The requestId argument is generated from the keyHash and the seed by\\n * @dev makeRequestId(keyHash, seed). If your contract could have concurrent\\n * @dev requests open, you can use the requestId to track which seed is\\n * @dev associated with which randomness. See VRFRequestIDBase.sol for more\\n * @dev details. (See \\\"SECURITY CONSIDERATIONS\\\" for principles to keep in mind,\\n * @dev if your contract could have multiple requests in flight simultaneously.)\\n *\\n * @dev Colliding `requestId`s are cryptographically impossible as long as seeds\\n * @dev differ. (Which is critical to making unpredictable randomness! See the\\n * @dev next section.)\\n *\\n * *****************************************************************************\\n * @dev SECURITY CONSIDERATIONS\\n *\\n * @dev A method with the ability to call your fulfillRandomness method directly\\n * @dev could spoof a VRF response with any random value, so it's critical that\\n * @dev it cannot be directly called by anything other than this base contract\\n * @dev (specifically, by the VRFConsumerBase.rawFulfillRandomness method).\\n *\\n * @dev For your users to trust that your contract's random behavior is free\\n * @dev from malicious interference, it's best if you can write it so that all\\n * @dev behaviors implied by a VRF response are executed *during* your\\n * @dev fulfillRandomness method. If your contract must store the response (or\\n * @dev anything derived from it) and use it later, you must ensure that any\\n * @dev user-significant behavior which depends on that stored value cannot be\\n * @dev manipulated by a subsequent VRF request.\\n *\\n * @dev Similarly, both miners and the VRF oracle itself have some influence\\n * @dev over the order in which VRF responses appear on the blockchain, so if\\n * @dev your contract could have multiple VRF requests in flight simultaneously,\\n * @dev you must ensure that the order in which the VRF responses arrive cannot\\n * @dev be used to manipulate your contract's user-significant behavior.\\n *\\n * @dev Since the ultimate input to the VRF is mixed with the block hash of the\\n * @dev block in which the request is made, user-provided seeds have no impact\\n * @dev on its economic security properties. They are only included for API\\n * @dev compatability with previous versions of this contract.\\n *\\n * @dev Since the block hash of the block which contains the requestRandomness\\n * @dev call is mixed into the input to the VRF *last*, a sufficiently powerful\\n * @dev miner could, in principle, fork the blockchain to evict the block\\n * @dev containing the request, forcing the request to be included in a\\n * @dev different block with a different hash, and therefore a different input\\n * @dev to the VRF. However, such an attack would incur a substantial economic\\n * @dev cost. This cost scales with the number of blocks the VRF oracle waits\\n * @dev until it calls responds to a request.\\n */\\nabstract contract VRFConsumerBase is VRFRequestIDBase {\\n  /**\\n   * @notice fulfillRandomness handles the VRF response. Your contract must\\n   * @notice implement it. See \\\"SECURITY CONSIDERATIONS\\\" above for important\\n   * @notice principles to keep in mind when implementing your fulfillRandomness\\n   * @notice method.\\n   *\\n   * @dev VRFConsumerBase expects its subcontracts to have a method with this\\n   * @dev signature, and will call it once it has verified the proof\\n   * @dev associated with the randomness. (It is triggered via a call to\\n   * @dev rawFulfillRandomness, below.)\\n   *\\n   * @param requestId The Id initially returned by requestRandomness\\n   * @param randomness the VRF output\\n   */\\n  function fulfillRandomness(bytes32 requestId, uint256 randomness) internal virtual;\\n\\n  /**\\n   * @dev In order to keep backwards compatibility we have kept the user\\n   * seed field around. We remove the use of it because given that the blockhash\\n   * enters later, it overrides whatever randomness the used seed provides.\\n   * Given that it adds no security, and can easily lead to misunderstandings,\\n   * we have removed it from usage and can now provide a simpler API.\\n   */\\n  uint256 private constant USER_SEED_PLACEHOLDER = 0;\\n\\n  /**\\n   * @notice requestRandomness initiates a request for VRF output given _seed\\n   *\\n   * @dev The fulfillRandomness method receives the output, once it's provided\\n   * @dev by the Oracle, and verified by the vrfCoordinator.\\n   *\\n   * @dev The _keyHash must already be registered with the VRFCoordinator, and\\n   * @dev the _fee must exceed the fee specified during registration of the\\n   * @dev _keyHash.\\n   *\\n   * @dev The _seed parameter is vestigial, and is kept only for API\\n   * @dev compatibility with older versions. It can't *hurt* to mix in some of\\n   * @dev your own randomness, here, but it's not necessary because the VRF\\n   * @dev oracle will mix the hash of the block containing your request into the\\n   * @dev VRF seed it ultimately uses.\\n   *\\n   * @param _keyHash ID of public key against which randomness is generated\\n   * @param _fee The amount of LINK to send with the request\\n   *\\n   * @return requestId unique ID for this request\\n   *\\n   * @dev The returned requestId can be used to distinguish responses to\\n   * @dev concurrent requests. It is passed as the first argument to\\n   * @dev fulfillRandomness.\\n   */\\n  function requestRandomness(bytes32 _keyHash, uint256 _fee) internal returns (bytes32 requestId) {\\n    LINK.transferAndCall(vrfCoordinator, _fee, abi.encode(_keyHash, USER_SEED_PLACEHOLDER));\\n    // This is the seed passed to VRFCoordinator. The oracle will mix this with\\n    // the hash of the block containing this request to obtain the seed/input\\n    // which is finally passed to the VRF cryptographic machinery.\\n    uint256 vRFSeed = makeVRFInputSeed(_keyHash, USER_SEED_PLACEHOLDER, address(this), nonces[_keyHash]);\\n    // nonces[_keyHash] must stay in sync with\\n    // VRFCoordinator.nonces[_keyHash][this], which was incremented by the above\\n    // successful LINK.transferAndCall (in VRFCoordinator.randomnessRequest).\\n    // This provides protection against the user repeating their input seed,\\n    // which would result in a predictable/duplicate output, if multiple such\\n    // requests appeared in the same block.\\n    nonces[_keyHash] = nonces[_keyHash] + 1;\\n    return makeRequestId(_keyHash, vRFSeed);\\n  }\\n\\n  LinkTokenInterface internal immutable LINK;\\n  address private immutable vrfCoordinator;\\n\\n  // Nonces for each VRF key from which randomness has been requested.\\n  //\\n  // Must stay in sync with VRFCoordinator[_keyHash][this]\\n  mapping(bytes32 => uint256) /* keyHash */ /* nonce */\\n    private nonces;\\n\\n  /**\\n   * @param _vrfCoordinator address of VRFCoordinator contract\\n   * @param _link address of LINK token contract\\n   *\\n   * @dev https://docs.chain.link/docs/link-token-contracts\\n   */\\n  constructor(address _vrfCoordinator, address _link) {\\n    vrfCoordinator = _vrfCoordinator;\\n    LINK = LinkTokenInterface(_link);\\n  }\\n\\n  // rawFulfillRandomness is called by VRFCoordinator when it receives a valid VRF\\n  // proof. rawFulfillRandomness then calls fulfillRandomness, after validating\\n  // the origin of the call\\n  function rawFulfillRandomness(bytes32 requestId, uint256 randomness) external {\\n    require(msg.sender == vrfCoordinator, \\\"Only VRFCoordinator can fulfill\\\");\\n    fulfillRandomness(requestId, randomness);\\n  }\\n}\\n\",\"keccak256\":\"0xff9e7d773545a1a5d73106e72bfb429da79c1cc4d893fb62051df801d2e61469\",\"license\":\"MIT\"},\"@chainlink/contracts/src/v0.8/VRFRequestIDBase.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ncontract VRFRequestIDBase {\\n  /**\\n   * @notice returns the seed which is actually input to the VRF coordinator\\n   *\\n   * @dev To prevent repetition of VRF output due to repetition of the\\n   * @dev user-supplied seed, that seed is combined in a hash with the\\n   * @dev user-specific nonce, and the address of the consuming contract. The\\n   * @dev risk of repetition is mostly mitigated by inclusion of a blockhash in\\n   * @dev the final seed, but the nonce does protect against repetition in\\n   * @dev requests which are included in a single block.\\n   *\\n   * @param _userSeed VRF seed input provided by user\\n   * @param _requester Address of the requesting contract\\n   * @param _nonce User-specific nonce at the time of the request\\n   */\\n  function makeVRFInputSeed(\\n    bytes32 _keyHash,\\n    uint256 _userSeed,\\n    address _requester,\\n    uint256 _nonce\\n  ) internal pure returns (uint256) {\\n    return uint256(keccak256(abi.encode(_keyHash, _userSeed, _requester, _nonce)));\\n  }\\n\\n  /**\\n   * @notice Returns the id for this request\\n   * @param _keyHash The serviceAgreement ID to be used for this request\\n   * @param _vRFInputSeed The seed to be passed directly to the VRF\\n   * @return The id for this request\\n   *\\n   * @dev Note that _vRFInputSeed is not the seed passed by the consuming\\n   * @dev contract, but the one generated by makeVRFInputSeed\\n   */\\n  function makeRequestId(bytes32 _keyHash, uint256 _vRFInputSeed) internal pure returns (bytes32) {\\n    return keccak256(abi.encodePacked(_keyHash, _vRFInputSeed));\\n  }\\n}\\n\",\"keccak256\":\"0x2bf1168e8fe548fa990e0aeaf89ef90680f80aa31eeaf901f485df60de51d51b\",\"license\":\"MIT\"},\"@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface LinkTokenInterface {\\n  function allowance(address owner, address spender) external view returns (uint256 remaining);\\n\\n  function approve(address spender, uint256 value) external returns (bool success);\\n\\n  function balanceOf(address owner) external view returns (uint256 balance);\\n\\n  function decimals() external view returns (uint8 decimalPlaces);\\n\\n  function decreaseApproval(address spender, uint256 addedValue) external returns (bool success);\\n\\n  function increaseApproval(address spender, uint256 subtractedValue) external;\\n\\n  function name() external view returns (string memory tokenName);\\n\\n  function symbol() external view returns (string memory tokenSymbol);\\n\\n  function totalSupply() external view returns (uint256 totalTokensIssued);\\n\\n  function transfer(address to, uint256 value) external returns (bool success);\\n\\n  function transferAndCall(\\n    address to,\\n    uint256 value,\\n    bytes calldata data\\n  ) external returns (bool success);\\n\\n  function transferFrom(\\n    address from,\\n    address to,\\n    uint256 value\\n  ) external returns (bool success);\\n}\\n\",\"keccak256\":\"0xc7d7cd730d36825485ef4107d93c3ff18b9f3a5a00ea3d5988ba9a0bd70b10c5\",\"license\":\"MIT\"},\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/Lottery.sol\":{\"content\":\"// SPDX-License-Identifier: SEE LICENSE IN LICENSE\\npragma solidity ^0.8.0;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"@chainlink/contracts/src/v0.8/VRFConsumerBase.sol\\\";\\n\\ncontract Lottery is VRFConsumerBase, Ownable{\\n\\n     //chainlink variables\\n     //amount of link to send with the request\\n     uint256 public fee;\\n     //ID of public key against which randomness is generated\\n     bytes32 public keyHash;\\n     //address of player\\n     address [] public players;\\n     uint8 maxPlayers;\\n     bool public gameStarted;\\n     uint256 entryFee;\\n     //current gameId\\n     uint256 public gameId;\\n\\n\\n/**\\n * events\\n */\\nevent GameStarted(uint256 gameId,uint8 maxPlayers,uint256 entryFee);\\nevent PlayerJoined(uint256 gameId,address player);\\nevent GameEnded(uint256 gameId,address winner, bytes32 requestId);\\n\\n   /**\\n   * constructor inherits a VRFConsumerBase and initiates the values for keyHash, fee and gameStarted\\n   * @param vrfCoordinator address of VRFCoordinator contract\\n   * @param linkToken address of LINK token contract\\n   * @param vrfFee the amount of LINK to send with the request\\n   * @param vrfKeyHash ID of public key against which randomness is generated\\n   */\\n    constructor( address vrfCoordinator,address linkToken,\\n    bytes32 vrfKeyHash,uint256 vrfFee ) VRFConsumerBase(vrfCoordinator,linkToken){\\n        keyHash=vrfKeyHash;\\n        fee=vrfFee;\\n        gameStarted=false;\\n\\n    }\\n\\n    //startsGame\\n    function startGame(uint8 _maxPlayers,uint256 _entryFee) public onlyOwner {\\n       require(gameStarted==false,\\\"Go check Lottery is running\\\");\\n\\n       //empty the players array\\n       delete players;\\n       maxPlayers=_maxPlayers;\\n       gameStarted=true;\\n       entryFee=_entryFee;\\n       gameId+=1;\\n\\n       emit GameStarted(gameId,maxPlayers,entryFee);\\n\\n        \\n    }\\n\\n   //joinGame by paying entry fees\\n\\n   function joinGame() public payable{\\n    require((gameStarted) &&(msg.value==entryFee) &&(players.length<maxPlayers),\\\"Please check if gameStarted ,you provioded amount eqaul to entry fee and lottery hasn't reached to max number of players\\\");\\n\\n    players.push(msg.sender);\\n    emit PlayerJoined(gameId,msg.sender);\\n    if(players.length==maxPlayers){\\n        getRandomWinner();\\n    }\\n   }\\n   /**\\n    * lets understanf process of getting random number \\n    * so first our contact will call requestRandomness from the VRFConsumerBase\\n    * and then VRFConsumerBase  further call the VRFCoordinator contract which is responsible for getting \\n    * the randomnesss back from the external world\\n    * AFter the VRFCoordinator has the Randomness it calls the fullFillRandomness function\\n    * with in the VRFConsumerBase which further select winner or random number\\n    */\\n      //FullfillRandomWords\\n\\nfunction fulfillRandomness(bytes32 requestId,uint256 randomness)internal virtual override{\\n      uint256 winnerIndex=randomness%players.length;\\n      address winner=players[winnerIndex];\\n      (bool sent,)=winner.call{value:address(this).balance}(\\\"\\\");\\n      require(sent,\\\"Transaction of Ether failed\\\");\\n      gameStarted=false;\\n      emit GameEnded(gameId,winner,requestId);\\n}\\n\\n//getRandomWinner=start the process to find random number\\n\\nfunction getRandomWinner() private returns(bytes32 requestId) {\\n     \\n     // LINK is an internal interface for Link token found within the VRFConsumerBase\\n        // Here we use the balanceOF method from that interface to make sure that our\\n        // contract has enough link so that we can request the VRFCoordinator for randomness\\n        require(LINK.balanceOf(address(this)) >= fee, \\\"Not enough LINK\\\");\\n        // Make a request to the VRF coordinator.\\n        // requestRandomness is a function within the VRFConsumerBase\\n        // it starts the process of randomness generation\\n        return requestRandomness(keyHash, fee);\\n}\\n\\n   // Function to receive Ether. msg.data must be empty\\nreceive ()external payable{}\\n    // Fallback function is called when msg.data is not empty\\n\\nfallback() external payable{}\\n\\n\\n\\n\\n\\n    \\n    \\n}\",\"keccak256\":\"0xcc62cd09241c262c1456d5c2d1733d945c223517ce7bb3907a2ee0182cd4b8da\",\"license\":\"SEE LICENSE IN LICENSE\"}},\"version\":1}",
+  "bytecode": "0x60c06040523480156200001157600080fd5b50604051620019ea380380620019ea8339818101604052810190620000379190620002a4565b83838173ffffffffffffffffffffffffffffffffffffffff1660a08173ffffffffffffffffffffffffffffffffffffffff16815250508073ffffffffffffffffffffffffffffffffffffffff1660808173ffffffffffffffffffffffffffffffffffffffff16815250505050620000c3620000b7620000f660201b60201c565b620000fe60201b60201c565b81600381905550806002819055506000600560016101000a81548160ff0219169083151502179055505050505062000316565b600033905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a35050565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000620001f682620001c9565b9050919050565b6200020881620001e9565b81146200021457600080fd5b50565b6000815190506200022881620001fd565b92915050565b6000819050919050565b62000243816200022e565b81146200024f57600080fd5b50565b600081519050620002638162000238565b92915050565b6000819050919050565b6200027e8162000269565b81146200028a57600080fd5b50565b6000815190506200029e8162000273565b92915050565b60008060008060808587031215620002c157620002c0620001c4565b5b6000620002d18782880162000217565b9450506020620002e48782880162000217565b9350506040620002f78782880162000252565b92505060606200030a878288016200028d565b91505092959194509250565b60805160a0516116a06200034a600039600081816102b20152610a570152600081816109230152610a1b01526116a06000f3fe6080604052600436106100a05760003560e01c8063d4f77b1c11610064578063d4f77b1c1461016a578063d7c81b5514610174578063ddca3f431461019f578063e849c38e146101ca578063f2fde38b146101f3578063f71d96cb1461021c576100a7565b80635e123ce4146100a957806361728f39146100d4578063715018a6146100ff5780638da5cb5b1461011657806394985ddd14610141576100a7565b366100a757005b005b3480156100b557600080fd5b506100be610259565b6040516100cb9190610c2f565b60405180910390f35b3480156100e057600080fd5b506100e961026c565b6040516100f69190610c63565b60405180910390f35b34801561010b57600080fd5b50610114610272565b005b34801561012257600080fd5b5061012b610286565b6040516101389190610cbf565b60405180910390f35b34801561014d57600080fd5b5061016860048036038101906101639190610d41565b6102b0565b005b61017261034c565b005b34801561018057600080fd5b50610189610492565b6040516101969190610d90565b60405180910390f35b3480156101ab57600080fd5b506101b4610498565b6040516101c19190610d90565b60405180910390f35b3480156101d657600080fd5b506101f160048036038101906101ec9190610de4565b61049e565b005b3480156101ff57600080fd5b5061021a60048036038101906102159190610e50565b6105b3565b005b34801561022857600080fd5b50610243600480360381019061023e9190610e7d565b610636565b6040516102509190610cbf565b60405180910390f35b600560019054906101000a900460ff1681565b60035481565b61027a610675565b61028460006106f3565b565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461033e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161033590610f07565b60405180910390fd5b61034882826107b9565b5050565b600560019054906101000a900460ff168015610369575060065434145b801561038b5750600560009054906101000a900460ff1660ff16600480549050105b6103ca576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103c190610fe5565b60405180910390fd5b6004339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f87969bc7faf902221a147b95ceba76e011c5efb0339a0a8ee7a2bb82d9cfbbd660075433604051610460929190611005565b60405180910390a1600560009054906101000a900460ff1660ff16600480549050036104905761048e61091c565b505b565b60075481565b60025481565b6104a6610675565b60001515600560019054906101000a900460ff161515146104fc576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104f39061107a565b60405180910390fd5b6004600061050a9190610bd6565b81600560006101000a81548160ff021916908360ff1602179055506001600560016101000a81548160ff0219169083151502179055508060068190555060016007600082825461055a91906110c9565b925050819055507f10a7675bf1b19b67834ca5a59866847fd31c62cdfc8e9466039e6b8e088e15ae600754600560009054906101000a900460ff166006546040516105a79392919061110c565b60405180910390a15050565b6105bb610675565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff160361062a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610621906111b5565b60405180910390fd5b610633816106f3565b50565b6004818154811061064657600080fd5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61067d610a0f565b73ffffffffffffffffffffffffffffffffffffffff1661069b610286565b73ffffffffffffffffffffffffffffffffffffffff16146106f1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016106e890611221565b60405180910390fd5b565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a35050565b6000600480549050826107cc9190611270565b90506000600482815481106107e4576107e36112a1565b5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905060008173ffffffffffffffffffffffffffffffffffffffff164760405161083790611301565b60006040518083038185875af1925050503d8060008114610874576040519150601f19603f3d011682016040523d82523d6000602084013e610879565b606091505b50509050806108bd576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108b490611362565b60405180910390fd5b6000600560016101000a81548160ff0219169083151502179055507fd2da138ec4b828f6f1dd931eea0488e41e941f7cda657ad8f524ede8cb2c7ce0600754838760405161090d93929190611382565b60405180910390a15050505050565b60006002547f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166370a08231306040518263ffffffff1660e01b815260040161097a9190610cbf565b602060405180830381865afa158015610997573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109bb91906113ce565b10156109fc576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016109f390611447565b60405180910390fd5b610a0a600354600254610a17565b905090565b600033905090565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16634000aea07f000000000000000000000000000000000000000000000000000000000000000084866000604051602001610a8b929190611467565b6040516020818303038152906040526040518463ffffffff1660e01b8152600401610ab893929190611520565b6020604051808303816000875af1158015610ad7573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610afb919061158a565b506000610b1d8460003060008089815260200190815260200160002054610b67565b9050600160008086815260200190815260200160002054610b3e91906110c9565b60008086815260200190815260200160002081905550610b5e8482610ba3565b91505092915050565b600084848484604051602001610b8094939291906115b7565b6040516020818303038152906040528051906020012060001c9050949350505050565b60008282604051602001610bb892919061163e565b60405160208183030381529060405280519060200120905092915050565b5080546000825590600052602060002090810190610bf49190610bf7565b50565b5b80821115610c10576000816000905550600101610bf8565b5090565b60008115159050919050565b610c2981610c14565b82525050565b6000602082019050610c446000830184610c20565b92915050565b6000819050919050565b610c5d81610c4a565b82525050565b6000602082019050610c786000830184610c54565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610ca982610c7e565b9050919050565b610cb981610c9e565b82525050565b6000602082019050610cd46000830184610cb0565b92915050565b600080fd5b610ce881610c4a565b8114610cf357600080fd5b50565b600081359050610d0581610cdf565b92915050565b6000819050919050565b610d1e81610d0b565b8114610d2957600080fd5b50565b600081359050610d3b81610d15565b92915050565b60008060408385031215610d5857610d57610cda565b5b6000610d6685828601610cf6565b9250506020610d7785828601610d2c565b9150509250929050565b610d8a81610d0b565b82525050565b6000602082019050610da56000830184610d81565b92915050565b600060ff82169050919050565b610dc181610dab565b8114610dcc57600080fd5b50565b600081359050610dde81610db8565b92915050565b60008060408385031215610dfb57610dfa610cda565b5b6000610e0985828601610dcf565b9250506020610e1a85828601610d2c565b9150509250929050565b610e2d81610c9e565b8114610e3857600080fd5b50565b600081359050610e4a81610e24565b92915050565b600060208284031215610e6657610e65610cda565b5b6000610e7484828501610e3b565b91505092915050565b600060208284031215610e9357610e92610cda565b5b6000610ea184828501610d2c565b91505092915050565b600082825260208201905092915050565b7f4f6e6c7920565246436f6f7264696e61746f722063616e2066756c66696c6c00600082015250565b6000610ef1601f83610eaa565b9150610efc82610ebb565b602082019050919050565b60006020820190508181036000830152610f2081610ee4565b9050919050565b7f506c6561736520636865636b2069662067616d6553746172746564202c796f7560008201527f2070726f76696f64656420616d6f756e7420657161756c20746f20656e74727960208201527f2066656520616e64206c6f7474657279206861736e277420726561636865642060408201527f746f206d6178206e756d626572206f6620706c61796572730000000000000000606082015250565b6000610fcf607883610eaa565b9150610fda82610f27565b608082019050919050565b60006020820190508181036000830152610ffe81610fc2565b9050919050565b600060408201905061101a6000830185610d81565b6110276020830184610cb0565b9392505050565b7f476f20636865636b204c6f74746572792069732072756e6e696e670000000000600082015250565b6000611064601b83610eaa565b915061106f8261102e565b602082019050919050565b6000602082019050818103600083015261109381611057565b9050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006110d482610d0b565b91506110df83610d0b565b92508282019050808211156110f7576110f661109a565b5b92915050565b61110681610dab565b82525050565b60006060820190506111216000830186610d81565b61112e60208301856110fd565b61113b6040830184610d81565b949350505050565b7f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160008201527f6464726573730000000000000000000000000000000000000000000000000000602082015250565b600061119f602683610eaa565b91506111aa82611143565b604082019050919050565b600060208201905081810360008301526111ce81611192565b9050919050565b7f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572600082015250565b600061120b602083610eaa565b9150611216826111d5565b602082019050919050565b6000602082019050818103600083015261123a816111fe565b9050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b600061127b82610d0b565b915061128683610d0b565b92508261129657611295611241565b5b828206905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600081905092915050565b50565b60006112eb6000836112d0565b91506112f6826112db565b600082019050919050565b600061130c826112de565b9150819050919050565b7f5472616e73616374696f6e206f66204574686572206661696c65640000000000600082015250565b600061134c601b83610eaa565b915061135782611316565b602082019050919050565b6000602082019050818103600083015261137b8161133f565b9050919050565b60006060820190506113976000830186610d81565b6113a46020830185610cb0565b6113b16040830184610c54565b949350505050565b6000815190506113c881610d15565b92915050565b6000602082840312156113e4576113e3610cda565b5b60006113f2848285016113b9565b91505092915050565b7f4e6f7420656e6f756768204c494e4b0000000000000000000000000000000000600082015250565b6000611431600f83610eaa565b915061143c826113fb565b602082019050919050565b6000602082019050818103600083015261146081611424565b9050919050565b600060408201905061147c6000830185610c54565b6114896020830184610d81565b9392505050565b600081519050919050565b600082825260208201905092915050565b60005b838110156114ca5780820151818401526020810190506114af565b60008484015250505050565b6000601f19601f8301169050919050565b60006114f282611490565b6114fc818561149b565b935061150c8185602086016114ac565b611515816114d6565b840191505092915050565b60006060820190506115356000830186610cb0565b6115426020830185610d81565b818103604083015261155481846114e7565b9050949350505050565b61156781610c14565b811461157257600080fd5b50565b6000815190506115848161155e565b92915050565b6000602082840312156115a05761159f610cda565b5b60006115ae84828501611575565b91505092915050565b60006080820190506115cc6000830187610c54565b6115d96020830186610d81565b6115e66040830185610cb0565b6115f36060830184610d81565b95945050505050565b6000819050919050565b61161761161282610c4a565b6115fc565b82525050565b6000819050919050565b61163861163382610d0b565b61161d565b82525050565b600061164a8285611606565b60208201915061165a8284611627565b602082019150819050939250505056fea26469706673582212207bd5ef22fdc528fcb7ab2630dae6dee9ce9e76e8ef420b155a8fc8552fc9ea0664736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600436106100a05760003560e01c8063d4f77b1c11610064578063d4f77b1c1461016a578063d7c81b5514610174578063ddca3f431461019f578063e849c38e146101ca578063f2fde38b146101f3578063f71d96cb1461021c576100a7565b80635e123ce4146100a957806361728f39146100d4578063715018a6146100ff5780638da5cb5b1461011657806394985ddd14610141576100a7565b366100a757005b005b3480156100b557600080fd5b506100be610259565b6040516100cb9190610c2f565b60405180910390f35b3480156100e057600080fd5b506100e961026c565b6040516100f69190610c63565b60405180910390f35b34801561010b57600080fd5b50610114610272565b005b34801561012257600080fd5b5061012b610286565b6040516101389190610cbf565b60405180910390f35b34801561014d57600080fd5b5061016860048036038101906101639190610d41565b6102b0565b005b61017261034c565b005b34801561018057600080fd5b50610189610492565b6040516101969190610d90565b60405180910390f35b3480156101ab57600080fd5b506101b4610498565b6040516101c19190610d90565b60405180910390f35b3480156101d657600080fd5b506101f160048036038101906101ec9190610de4565b61049e565b005b3480156101ff57600080fd5b5061021a60048036038101906102159190610e50565b6105b3565b005b34801561022857600080fd5b50610243600480360381019061023e9190610e7d565b610636565b6040516102509190610cbf565b60405180910390f35b600560019054906101000a900460ff1681565b60035481565b61027a610675565b61028460006106f3565b565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461033e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161033590610f07565b60405180910390fd5b61034882826107b9565b5050565b600560019054906101000a900460ff168015610369575060065434145b801561038b5750600560009054906101000a900460ff1660ff16600480549050105b6103ca576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103c190610fe5565b60405180910390fd5b6004339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f87969bc7faf902221a147b95ceba76e011c5efb0339a0a8ee7a2bb82d9cfbbd660075433604051610460929190611005565b60405180910390a1600560009054906101000a900460ff1660ff16600480549050036104905761048e61091c565b505b565b60075481565b60025481565b6104a6610675565b60001515600560019054906101000a900460ff161515146104fc576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104f39061107a565b60405180910390fd5b6004600061050a9190610bd6565b81600560006101000a81548160ff021916908360ff1602179055506001600560016101000a81548160ff0219169083151502179055508060068190555060016007600082825461055a91906110c9565b925050819055507f10a7675bf1b19b67834ca5a59866847fd31c62cdfc8e9466039e6b8e088e15ae600754600560009054906101000a900460ff166006546040516105a79392919061110c565b60405180910390a15050565b6105bb610675565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff160361062a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610621906111b5565b60405180910390fd5b610633816106f3565b50565b6004818154811061064657600080fd5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61067d610a0f565b73ffffffffffffffffffffffffffffffffffffffff1661069b610286565b73ffffffffffffffffffffffffffffffffffffffff16146106f1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016106e890611221565b60405180910390fd5b565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a35050565b6000600480549050826107cc9190611270565b90506000600482815481106107e4576107e36112a1565b5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905060008173ffffffffffffffffffffffffffffffffffffffff164760405161083790611301565b60006040518083038185875af1925050503d8060008114610874576040519150601f19603f3d011682016040523d82523d6000602084013e610879565b606091505b50509050806108bd576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108b490611362565b60405180910390fd5b6000600560016101000a81548160ff0219169083151502179055507fd2da138ec4b828f6f1dd931eea0488e41e941f7cda657ad8f524ede8cb2c7ce0600754838760405161090d93929190611382565b60405180910390a15050505050565b60006002547f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166370a08231306040518263ffffffff1660e01b815260040161097a9190610cbf565b602060405180830381865afa158015610997573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109bb91906113ce565b10156109fc576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016109f390611447565b60405180910390fd5b610a0a600354600254610a17565b905090565b600033905090565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16634000aea07f000000000000000000000000000000000000000000000000000000000000000084866000604051602001610a8b929190611467565b6040516020818303038152906040526040518463ffffffff1660e01b8152600401610ab893929190611520565b6020604051808303816000875af1158015610ad7573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610afb919061158a565b506000610b1d8460003060008089815260200190815260200160002054610b67565b9050600160008086815260200190815260200160002054610b3e91906110c9565b60008086815260200190815260200160002081905550610b5e8482610ba3565b91505092915050565b600084848484604051602001610b8094939291906115b7565b6040516020818303038152906040528051906020012060001c9050949350505050565b60008282604051602001610bb892919061163e565b60405160208183030381529060405280519060200120905092915050565b5080546000825590600052602060002090810190610bf49190610bf7565b50565b5b80821115610c10576000816000905550600101610bf8565b5090565b60008115159050919050565b610c2981610c14565b82525050565b6000602082019050610c446000830184610c20565b92915050565b6000819050919050565b610c5d81610c4a565b82525050565b6000602082019050610c786000830184610c54565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610ca982610c7e565b9050919050565b610cb981610c9e565b82525050565b6000602082019050610cd46000830184610cb0565b92915050565b600080fd5b610ce881610c4a565b8114610cf357600080fd5b50565b600081359050610d0581610cdf565b92915050565b6000819050919050565b610d1e81610d0b565b8114610d2957600080fd5b50565b600081359050610d3b81610d15565b92915050565b60008060408385031215610d5857610d57610cda565b5b6000610d6685828601610cf6565b9250506020610d7785828601610d2c565b9150509250929050565b610d8a81610d0b565b82525050565b6000602082019050610da56000830184610d81565b92915050565b600060ff82169050919050565b610dc181610dab565b8114610dcc57600080fd5b50565b600081359050610dde81610db8565b92915050565b60008060408385031215610dfb57610dfa610cda565b5b6000610e0985828601610dcf565b9250506020610e1a85828601610d2c565b9150509250929050565b610e2d81610c9e565b8114610e3857600080fd5b50565b600081359050610e4a81610e24565b92915050565b600060208284031215610e6657610e65610cda565b5b6000610e7484828501610e3b565b91505092915050565b600060208284031215610e9357610e92610cda565b5b6000610ea184828501610d2c565b91505092915050565b600082825260208201905092915050565b7f4f6e6c7920565246436f6f7264696e61746f722063616e2066756c66696c6c00600082015250565b6000610ef1601f83610eaa565b9150610efc82610ebb565b602082019050919050565b60006020820190508181036000830152610f2081610ee4565b9050919050565b7f506c6561736520636865636b2069662067616d6553746172746564202c796f7560008201527f2070726f76696f64656420616d6f756e7420657161756c20746f20656e74727960208201527f2066656520616e64206c6f7474657279206861736e277420726561636865642060408201527f746f206d6178206e756d626572206f6620706c61796572730000000000000000606082015250565b6000610fcf607883610eaa565b9150610fda82610f27565b608082019050919050565b60006020820190508181036000830152610ffe81610fc2565b9050919050565b600060408201905061101a6000830185610d81565b6110276020830184610cb0565b9392505050565b7f476f20636865636b204c6f74746572792069732072756e6e696e670000000000600082015250565b6000611064601b83610eaa565b915061106f8261102e565b602082019050919050565b6000602082019050818103600083015261109381611057565b9050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006110d482610d0b565b91506110df83610d0b565b92508282019050808211156110f7576110f661109a565b5b92915050565b61110681610dab565b82525050565b60006060820190506111216000830186610d81565b61112e60208301856110fd565b61113b6040830184610d81565b949350505050565b7f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160008201527f6464726573730000000000000000000000000000000000000000000000000000602082015250565b600061119f602683610eaa565b91506111aa82611143565b604082019050919050565b600060208201905081810360008301526111ce81611192565b9050919050565b7f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572600082015250565b600061120b602083610eaa565b9150611216826111d5565b602082019050919050565b6000602082019050818103600083015261123a816111fe565b9050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b600061127b82610d0b565b915061128683610d0b565b92508261129657611295611241565b5b828206905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600081905092915050565b50565b60006112eb6000836112d0565b91506112f6826112db565b600082019050919050565b600061130c826112de565b9150819050919050565b7f5472616e73616374696f6e206f66204574686572206661696c65640000000000600082015250565b600061134c601b83610eaa565b915061135782611316565b602082019050919050565b6000602082019050818103600083015261137b8161133f565b9050919050565b60006060820190506113976000830186610d81565b6113a46020830185610cb0565b6113b16040830184610c54565b949350505050565b6000815190506113c881610d15565b92915050565b6000602082840312156113e4576113e3610cda565b5b60006113f2848285016113b9565b91505092915050565b7f4e6f7420656e6f756768204c494e4b0000000000000000000000000000000000600082015250565b6000611431600f83610eaa565b915061143c826113fb565b602082019050919050565b6000602082019050818103600083015261146081611424565b9050919050565b600060408201905061147c6000830185610c54565b6114896020830184610d81565b9392505050565b600081519050919050565b600082825260208201905092915050565b60005b838110156114ca5780820151818401526020810190506114af565b60008484015250505050565b6000601f19601f8301169050919050565b60006114f282611490565b6114fc818561149b565b935061150c8185602086016114ac565b611515816114d6565b840191505092915050565b60006060820190506115356000830186610cb0565b6115426020830185610d81565b818103604083015261155481846114e7565b9050949350505050565b61156781610c14565b811461157257600080fd5b50565b6000815190506115848161155e565b92915050565b6000602082840312156115a05761159f610cda565b5b60006115ae84828501611575565b91505092915050565b60006080820190506115cc6000830187610c54565b6115d96020830186610d81565b6115e66040830185610cb0565b6115f36060830184610d81565b95945050505050565b6000819050919050565b61161761161282610c4a565b6115fc565b82525050565b6000819050919050565b61163861163382610d0b565b61161d565b82525050565b600061164a8285611606565b60208201915061165a8284611627565b602082019150819050939250505056fea26469706673582212207bd5ef22fdc528fcb7ab2630dae6dee9ce9e76e8ef420b155a8fc8552fc9ea0664736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "linkToken": "address of LINK token contract",
+          "vrfCoordinator": "address of VRFCoordinator contract",
+          "vrfFee": "the amount of LINK to send with the request",
+          "vrfKeyHash": "ID of public key against which randomness is generated"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "GameStarted(uint256,uint8,uint256)": {
+        "notice": "events"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "constructor inherits a VRFConsumerBase and initiates the values for keyHash, fee and gameStarted"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 79,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "nonces",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      },
+      {
+        "astId": 273,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 410,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "fee",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 412,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "keyHash",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_bytes32"
+      },
+      {
+        "astId": 415,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "players",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 417,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "maxPlayers",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_uint8"
+      },
+      {
+        "astId": 419,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "gameStarted",
+        "offset": 1,
+        "slot": "5",
+        "type": "t_bool"
+      },
+      {
+        "astId": 421,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "entryFee",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 423,
+        "contract": "contracts/Lottery.sol:Lottery",
+        "label": "gameId",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_bytes32,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}
